@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+* {
+    
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    color: red;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+}
+
+
+#section5{
+    margin-top:5%;
+    padding: 5%;
+    gap: 30px;
+    
+}
+
+.cajas{
+position: relative;
+height: 250px;
+width: 100%;
+border: 1px black;
+overflow: hidden;
+margin: 5%;
+
+
+
+}
+
+#cajast{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+.imagen9{
+    object-fit: cover;
+    height: 100%;
+    width: 90%;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.titulos5{
+
+    position: absolute;
+    bottom: -63px;
+    left:0;
+    width: 90%;
+    background-color: rgba(0,0,0,0.7);
+    color: #e7627b;
+    padding: 5px;
+    text-align: left;
+    transition: bottom 0.3s;
+    font-size: 1.2rem;
+}
+
+.cajas:hover .titulos5{
+    bottom: 0;
+}
+
+.cajas:hover .imagen9{
+    filter: grayscale(0%);
+}
+
+#proyectos{
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 25px;
+    margin-top: 5%;
+    padding: 25px;
+    text-decoration-color: rgb(199, 183, 183);
+    text-decoration-thickness: 10%;
