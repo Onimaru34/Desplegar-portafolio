@@ -1,0 +1,40 @@
+#AppCalcu{
+    height: 390px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#AppCalcu form{
+    height: 100%;
+    width: 100%;
+    background-color: red;
+}
+
+#AppCalcu input[type=textfield]{
+    width: 100%;
+    width: 90%;
+    cursor: default;
+
+    background-color: black;
+    color: white;
+    padding: 15px;
+    text-align: right;
+    font-size: 50px;
+    border: 0;
+    outline: none;
+}
+
+#AppCalcu input[type=button], input[type=reset]{
+    width: 22%;
+    cursor: pointer;
+
+    font-weight: bold;
+    font-size: 26px;
+    color: black;
+    padding: 18px;
+    margin: 3px;
+    border: 0;
+    border-radius: 100%;
+}
+

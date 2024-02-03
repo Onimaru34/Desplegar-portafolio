@@ -17,6 +17,8 @@ header{
     justify-content: center;
     position: fixed;
     top: 0;
+    height: 20%;
+    z-index: 20;
 }
 
 

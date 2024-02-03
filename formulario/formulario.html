@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="Formulario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+   
+    <section class="formulario">
+
+        <h4> FORMULARIO</h4> 
+
+        <div class="name">
+        <input type="text" name="Nombre" id="Nombres" placeholder="Ingrese su Nombre">
+
+        <input type="text" name="Apellido" id="Apellidos" placeholder="Ingrese su Apellido" >
+        </div>
+
+       <div class="datos">
+            <div>Genero </div>
+          
+            <label for="genero">Masculino
+                <input type="radio" name="Masculino" id="m">
+            </label>
+            <label for="genero">Femenino
+                <input type="radio" name="Femenino" id="f">
+            </label>
+        </div>
+
+        <input class="datos" type="text" name="telefono" id="Telefono" placeholder="Telefono" >
+
+        <select class="datos" name="Tipo_de_documento" id="lista">
+            <option value="Tipo de Documento">Tipo de Documento </option>
+            <option value="CC">Cedula de Ciudadania</option>
+            <option value="TI">Terjeta de identidad </option>
+            <option value="P">Pasaporte</option>
+          </select>
+
+        <label for="start">Fecha de Nacimiento</label>
+
+        <input class="datos" type="date" id="Fecha" name="Fecha" value="" min="1970-01-01" max="2024-12-31" />
+
+        <input class="datos" type="text" name="correo" id="Correo" placeholder="Correo" >
+        
+        <div class="registrar">
+        <button onclick="registrar(), pintar()">REGISTRAR</button>
+        </div>
+    </section>
+
+<div><h2 id="listaDatos"></h2></div>
+
+</body>
+
+<script>
+    let data = []
+    function registrar() {
+        
+        let g = ""
+        console.log(document.getElementById("lista").value);
+        if (document.getElementById("m").checked){
+            console.log("Masculino");
+            g="Masculino"
+        }else{
+            console.log("Femenino");
+            g="Femenino"
+        }
+
+       
+        let datos = {}
+        datos = {genero:g, 
+                tipodoc: document.getElementById("lista").value,
+                Nombre: document.getElementById("Nombres").value, 
+                Apellido:document.getElementById("Apellidos").value,
+                Telefono:document.getElementById("Telefono").value,
+                Fecha:document.getElementById("Fecha").value,
+                Correo:document.getElementById("Correo").value,
+            }
+        console.log(datos);
+
+        data.push(datos)
+        console.log(data) 
+    }
+
+    function pintar(){
+        data.forEach((item, i)=>{
+            let ul = document.createElement("ul")
+            let li = document.createElement("li")
+            li.textContent=item.Nombre + "-" +item.Apellido + "-" +item.genero + "-" +item.Telefono + "-" +item.tipodoc + "-" +item.Fecha + "-" +item.Correo
+            ul.appendChild(li)
+            document.getElementById("listaDatos").appendChild(ul)
+            document.getElementById("data") = ""
+        })
+    }
+
+
+
+
+
+
+</script>
+
+
+</html>

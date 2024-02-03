@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.formulario{
+width: 600px;
+background-color: rgb(153, 22, 22);
+padding: 30px;
+margin: auto;
+margin-top: 100px;
+border-radius: 25px;
+font-family: 'Dosis', sans-serif;
+color: white;
+display: grid;
+align-items: center;
+}
+
+.formulario h4{
+    font-size: 22px;
+    margin: 20px;
+
+}
+
+.name{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    margin-bottom: 10px;
+}
+
+#Nombres{
+width: 48%;
+border-radius: 5px;
+padding: 3px;
+}
+
+#Apellidos{
+width: 48%;
+border-radius: 5px;
+padding: 3px;
+}
+
+.datos{
+    margin-bottom: 6px;
+    border-radius:5px ;
+    padding: 3px;
+}
+
+.registrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#listaDatos{
+    position: relative;
+    left: 50px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    
+    <div id="AppCalcu">
+        <form name="calculator">
+            <input type="textfield" name="app" value="" autocomplete="off" readonly>
+
+
+            <input type="button" value="7" onclick="document.calculator.app.value+='7'">
+            <input type="button" value="8" onclick="document.calculator.app.value+='8'">
+            <input type="button" value="9" onclick="document.calculator.app.value+='9'">
+            <input type="button" value="+" onclick="document.calculator.app.value+='+'">
+           <br>
+            <input type="button" value="4" onclick="document.calculator.app.value+='4'">
+            <input type="button" value="5" onclick="document.calculator.app.value+='5'">
+            <input type="button" value="6" onclick="document.calculator.app.value+='6'">
+            <input type="button" value="-" onclick="document.calculator.app.value+='-'">
+            <br>
+            <input type="button" value="1" onclick="document.calculator.app.value+='1'">
+            <input type="button" value="2" onclick="document.calculator.app.value+='2'">
+            <input type="button" value="3" onclick="document.calculator.app.value+='3'">
+            <input type="button" value="x" onclick="document.calculator.app.value+='*'">
+            <br>
+            <input type="button" value="0" onclick="document.calculator.app.value+='0'">
+            <input type="reset" value="C"> 
+            <input type="button" value="=" onclick="document.calculator.app.value=eval(document.calculator.app.value)">
+            <input type="button" value="/" onclick="document.calculator.app.value+='/'">
+
+        </form>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,703 @@
+@import url('https://fonts.googleapis.com/css2? family= Permanent+Marker & display=swap');
+@import url(https://db.onlinewebfonts.com/c/8b9a6615e5548f889ddd9de161c44b24?family=Brush);
+@import url(https://db.onlinewebfonts.com/c/867ec14fb235e53a1026b6e6884e71fa?family=GOOD+BRUSH);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    user-select: none;
+    /* box-sizing: border-box; */
+
+    /* logoo y tituloss */
+}
+
+body {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+   
+}
+
+#header {
+
+    width: 100%;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 3;
+}
+
+
+* i {
+    font-size: 1em;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+main {
+    margin: 7vh 0 0 6vh;
+
+
+}
+
+/* menu derechoo */
+
+#header {
+
+    --img1: scale(1);
+    --img2: scale(0);
+}
+
+#header:has( .elige:target){
+    --img1: scale(0);
+    --img2: scale(1);
+    
+    --clip: clip-path: inset( 0 0 0 0)
+}
+
+.menu-cont {
+    width: 95%;
+    margin: 0 auto;
+    height: 70px;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-areas: "logo icono";
+    justify-content: space-between;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: ;
+    grid-area: logo;
+
+}
+
+.icono{
+    color: rgb(245, 242, 242);
+    grid-area: icono;
+    position: relative;
+    z-index: 9;
+
+    transform: var(--img1) ;
+}
+
+.icono--segundo{
+    transform: var(--img2);
+}
+
+.material-symbols-outlined{
+    width: 30px;
+    display: block;
+    color: white;
+}
+
+.elige{
+    position: fixed;
+    background-color: black;
+    width: 20%;
+    height: 20%;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    z-index: 8;
+    padding: 1em;
+
+    display: grid;
+    align-content: center;
+    gap: 1rem;
+
+    overflow-y: auto;
+
+    clip-path: var(--clip,) inset(0 0 100% 100%);
+    transition: clip-path .3s;
+}
+
+#menu{
+    position: fixed;
+}
+
+.elige_lista{
+    list-style: none;
+}
+
+.elige_link{
+    color: white;
+    padding: 1em, 7em;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+
+    position: relative;
+}
+
+
+
+
+
+
+
+ /* Menu izquierdo  */
+
+#menuFlecha {
+    display: none;
+}
+
+.menuLateral {
+    width: 6vh;
+    height: 100vh;
+    position: fixed;
+    bottom: 0;
+    top: 15vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #0b0e15;
+    z-index: 4;
+    transition: width 0.5s;
+}
+
+.allItems {
+    overflow-y: scroll;
+    padding: 0 0 15vh 0;
+    text-align: end;
+}
+
+.menuLateral span {
+    display: none;
+}
+
+#menuFlecha:checked+.menuLateral {
+    width: 200px;
+}
+
+#menuFlecha:checked+.menuLateral span {
+    display: block;
+}
+
+.menuLateral img {
+    height: 1.8rem;
+    width: 1.8rem;
+    color: #f5f5f5;
+}
+
+.menuLateral a {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+.menuBoton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 10px;
+    background-color: #E73047;
+    border-radius: 0 50px 50px 0;
+    width: 100%;
+}
+
+#menuFlecha:checked+.menuLateral .menuBoton {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo10 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.menuBoton i {
+    margin-right: 2px;
+    transition: transform .8s;
+}
+
+#menuFlecha:checked+.menuLateral .menuBoton i {
+    transform: rotate(180deg);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+#menuFlecha:checked+.menuLateral .item {
+    display: flex;
+    justify-content: end;
+}
+
+#menuFlecha:checked+.menuLateral .item a {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+#menuFlecha:checked+.menuLateral .item span {
+    margin-right: 10px;
+}
+
+
+.item i {
+
+    border-radius: 20%;
+    padding: 10px;
+}
+
+@-webkit-keyframes pulsar {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes pulsar {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
+
+.Tit {
+    font-size: 35px;
+    text-align: center;
+    margin: 2%;
+    font-family: "GOOD BRUSH";
+}
+
+.linea-tit {
+    width: 100%;
+}
+
+
+/* secccion hamburgerr */
+
+#titulo-ham{
+   margin-top: 10%;
+}
+
+#hamburguesa {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+}
+
+.padreHam {
+    width: 70%;
+    border: black 1px solid;
+    margin: 10% 5%;
+    box-shadow: 0 2px 4px;
+    border-radius: 3px;
+
+}
+
+img {
+    width: 100%;
+    display: flex;
+    opacity: 0.7;
+    height: 60%;
+    background-color: black;
+    border-radius: 10px;
+
+}
+
+.cajasHam {
+    position: relative;
+    
+    text-align: center;
+    background-color: black;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.titulo {
+    width: 100%;
+    color: black;
+    position: absolute;
+    top: 85%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-family: "GOOD BRUSH";
+    background-image: linear-gradient(to bottom, red, yellow);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 25px;
+
+}
+
+.des {
+    font-family: "GOOD BRUSH";
+    width: 100%;
+}
+
+.conte-des {
+    margin: 15px;
+}
+
+.papas {
+    margin-top: 3%;
+}
+
+.ash {
+    margin-top: 3%;
+    margin-left: 6%;
+    margin-bottom: 3%;
+}
+
+.generalPrecio {
+    width: 80%;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+}
+
+.girar {
+    transform: rotate(-90deg);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 12px;
+    margin-left: 1rem;
+
+}
+
+.valorph {
+    margin-top: 10px;
+    font-family: "GOOD BRUSH";
+    font-size: 30px;
+    color: rgb(144, 224, 24);
+
+}
+
+.Wps {
+
+    border-radius: 6px;
+    border: 1px;
+    font-family: "GOOD BRUSH";
+    font-size: 1.2rem;
+    margin-left: 10%;
+    padding: 3px;
+}
+
+.ash {
+    font-size: 18px;
+    font-family: "GOOD BRUSH";
+}
+
+/* seccion perros */
+
+#menu-perros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.perros {
+    width: 70%;
+    border: black 1px solid;
+    margin: 10% 15%;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px;
+
+}
+
+.perrosimg {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    background-color: black;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+
+
+/* seccion salchicha */
+
+#salchicha {}
+
+.imgSalchi {
+    margin: 10px;
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    background-color: black;
+}
+
+.padreCajas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.cajaHijo {
+    width: 70%;
+    border: black 1px solid;
+    margin: 10% 15%;
+    box-shadow: 0 2px 4px;
+
+
+}
+
+.comidaNombre {
+    color: black;
+    position: absolute;
+    top: 85%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-family: "GOOD BRUSH";
+    background-image: linear-gradient(to bottom, red, yellow);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 1, 8rem;
+}
+
+.comida-detalle {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.linea {
+    margin: 3%;
+}
+
+.detallePrecio {
+    margin-top: 10px;
+    font-family: "GOOD BRUSH";
+    font-size: 30px;
+    color: rgb(144, 224, 24);
+
+}
+
+/* paporras  */
+
+
+.conte-img {
+    width: 100%;
+    height: 25rem;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgSola {
+    width: 30%;
+    height: 25rem;
+}
+
+.titulo2 {
+    font-family: "GOOD BRUSH";
+    color: orange;
+    font-size: 1.4rem;
+}
+
+.linea1 {
+    margin: 1%;
+    margin-left: 60%;
+}
+
+.padrePapo {
+    display: grid;
+    place-items: center;
+}
+
+.cajaHijo-papo {
+    width: 60%;
+    border: rgb(146, 145, 145) 1px solid;
+    margin: 2% 5%;
+    box-shadow: 0 2px 4px;
+}
+
+/* Parilla */
+
+.titulo5 {
+    position: absolute;
+}
+
+/* bebidass */
+
+.padreCajas-bebi {
+    display: grid;
+    place-items: center;
+}
+
+.cajaHijo-bebi {
+    width: 60%;
+    margin: 1% 5%;
+    border: 1px rgb(202, 198, 198) solid;
+    box-shadow: 0 2px 4px;
+}
+
+
+
+/* decoracion  */
+
+#decoracion {
+    width: 100%;
+}
+
+.conte-decora {
+    display: grid;
+    place-items: center;
+
+}
+
+.tit {
+    color: orange;
+}
+
+.caja-decora {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: black;
+}
+
+.globo {
+    width: 60%;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+}
+
+.brownie {
+    width: 60%;
+    border-radius: 20px;
+    display: grid;
+}
+
+.decodes {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(1, 1fr);
+    font-family: "GOOD BRUSH";
+}
+
+.caja-browie {
+    font-family: "GOOD BRUSH";
+}
+
+.pie {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #000000;
+}
+
+.pie-pagina {
+
+    width: 50%;
+    height: 90%;
+    background-color: black;
+}
+
+/* responsivee */
+
+@media screen and (max-width:1550px){
+
+    #hamburguesa{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    #menu-perros{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .padreCajas{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    
+    
+}
+
+@media screen and (max-width:1150px){
+
+    #hamburguesa{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    #menu-perros{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .padreCajas{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .comida-detalle{
+        width: 85%;
+    }
+}
+
+@media screen and (max-width:780px){
+
+    #hamburguesa{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    
+    #menu-perros{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .padreCajas{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .comida-detalle{
+        width: 65%;
+    }
+    
+}
+
+@media screen and (max-width:400px){
+
+   
+
+    .detallePrecio{
+       font-size: 1.2rem;
+    }
+    .wps {
+        font-size: 0.5rem;
+     }
+    
+}
