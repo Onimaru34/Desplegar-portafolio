@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    
+    <div id="parte0">
+        <h1 id="title1">Lista de actividades</h1>
+    </div>
+    <div class="inform">
+       
+        <div id="parte1">
+        <input type="text" id="text" placeholder="Ingrese la información">
+        <input type="date" id="Fec">
+        <button id="A" onclick=" agregar('Baja'),pintar()">+</button>
+        </div>
+        <div id="parte2" class="btf">
+            <input type="button" value="✔" id="fle" onclick="agregar('Alta'),pintar()">
+            <select id="op" onchange="ordenarDatos()">
+                <option value="Ordenar">Ordenar</option>
+                <option value="Alto al mas Bajo">Alto al mas Bajo</option>
+                <option value="Bajo al mas Alto">Bajo al mas Alto</option>
+            </select>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td> Nombre</td>
+                <td>Prioridad</td>
+                <td>Fecha</td>
+            </tr>
+        </thead>
+        <tbody id="lista">
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+
+
+
+<script>
+let dat = [];
+function agregar(prioridad) {
+    let datos = {};
+
+    datos = {
+        nombre: document.getElementById("text").value,
+        prioridad: prioridad,
+        fecha: document.getElementById("Fec").value
+    }
+
+    
+    if (datos.nombre === "" && datos.fecha === "") {
+        prioridad = "";
+        alert("ingrese los datos");
+    }
+
+    document.getElementById("text").value = "",
+        prioridad = "",
+        document.getElementById("Fec").value = ""
+
+    console.log(datos)
+    dat.push(datos)
+    console.log(dat)
+
+
+}
+
+function ordenarDatos() {
+    let opcion = document.getElementById("op").value;
+
+    if (opcion === "Alto al mas Bajo") {
+        dat.sort((a, b) => {
+            if (a.prioridad === "Alta" && b.prioridad === "Baja") {
+                return -1;
+            }
+        });
+    } else {
+        dat.sort((a, b) => {
+            if (a.prioridad === "Baja" && b.prioridad === "Alta") {
+                return -1;
+            }
+        });
+    }
+
+
+    pintar();
+}
+
+function pintar() {
+    let tableBody = document.getElementById("lista");
+    while (tableBody.firstChild) {
+        tableBody.removeChild(tableBody.firstChild);
+    }
+
+    dat.forEach((item, i) => {
+        let tr = document.createElement("tr");
+        if (item.nombre !== "" && item.fecha !== "") {
+            let nombre = document.createElement("td");
+            nombre.textContent = item.nombre;
+            tr.appendChild(nombre);
+        }
+
+        if (item.nombre !== "" && item.fecha !== "") {
+            let prioridad = document.createElement("td");
+            prioridad.textContent = item.prioridad;
+            tr.appendChild(prioridad);
+        }
+
+        if (item.nombre !== "" && item.fecha !== "") {
+            let fecha = document.createElement("td");
+            fecha.textContent = item.fecha;
+            tr.appendChild(fecha);
+        }
+        document.getElementById("lista").appendChild(tr);
+
+    });
+}
+
+
+</script>
+</html>
