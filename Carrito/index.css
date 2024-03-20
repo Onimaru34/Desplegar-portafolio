@@ -78,7 +78,14 @@ header h1{
     padding: 5px 15px;
     border-radius: 5px;
     cursor: pointer;
+    transition: .3s;
 }
+
+.boton-item:hover{
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
+}
+
 /* seccion carrito */
 #carritoI{
     border: 2px solid #666;
@@ -108,6 +115,7 @@ header h1{
     border: 5px solid rgb(7, 107, 29); */
     border-radius: 20px;
     padding: 10px;
+    cursor: pointer;
     transition: .3s;
 }
 
@@ -150,6 +158,11 @@ header h1{
     padding: 30px ;
 }
 
+.botonMo{
+    cursor: pointer;
+    transition: .3s;
+}
+
 #nameAndImage{
     display: flex;
     flex-direction: column;
@@ -181,35 +194,6 @@ header h1{
 
 
 
-#carrito .carrito-item .selector-cantidad{
-    display: inline-block;
-    margin-right: 25px;
-}
-#carrito .carrito-item .carrito-item-cantidad{
-    border: none;
-    font-size: 18px;
-    background-color: transparent;
-    display: inline-block;
-    width:30px;
-    padding: 5px;
-    text-align: center;
-}
-#carrito .carrito-item .selector-cantidad i{
-    font-size: 18px;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
-    text-align: center;
-    border-radius: 50%;
-    border: 1px solid #000;
-    cursor: pointer;
-}
-#carrito .carrito-item .carrito-item-precio{
-    font-weight: bold;
-    display: inline-block;
-    font-size: 18px;
-    margin-bottom: 5px;
-}
 .btn-eliminar{
    /*  position: absolute;
     right: 15px;
@@ -247,32 +231,9 @@ header h1{
     
     padding: 30px;
 }
-.carrito-total .fila{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.carrito-total .btn-pagar{
-    display: block;
-    width: 100%;
-    border: none;
-    background: rgb(7, 107, 29);;
-    color: #fff;
-    border-radius: 5px;
-    font-size: 18px;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: .3s;
-}
-.carrito-total .btn-pagar:hover{
-    scale: 1.05;
-}
+
+
+
 
 /* SECCION RESPONSIVE */
 @media screen and (max-width: 850px) {
