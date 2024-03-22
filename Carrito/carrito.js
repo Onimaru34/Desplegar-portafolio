@@ -16,6 +16,10 @@ const totalTag = document.getElementById("total")
 const itemsC=document.getElementById("carrito-items")
 const CantidadCarrito = document.getElementById("CantidadCarrito")
 
+const formatoPrecio = (precio) => {
+    return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  };
+
 let carrito=[]
 
 CantidadCarrito.style.display = "none"
@@ -144,7 +148,7 @@ let carritoHeader = document.createElement("div")
         div.appendChild(imagenT)
 
         let precio= document.createElement("span")
-        precio.textContent=item.precio
+        precio.textContent= formatoPrecio(item.precio)
         precio.classList="precio-item"
         div.appendChild(precio)
 
@@ -230,7 +234,7 @@ function addProduct(){
         contenedorCar.appendChild(datosItem)
 
         let precio= document.createElement("p")
-        precio.textContent=item.precio
+        precio.textContent=formatoPrecio(item.precio)
         datosItem.appendChild(precio)
         
         let cantidad= document.createElement("p")
@@ -238,7 +242,7 @@ function addProduct(){
         datosItem.appendChild(cantidad)
 
         let total= document.createElement("p")
-        total.textContent= item.cantidad * item.precio
+        total.textContent= formatoPrecio(item.cantidad * item.precio)
         datosItem.appendChild(total)
 
         let eliminar = document.createElement("img")
@@ -280,7 +284,7 @@ function addProduct(){
 
     const totalCarr = document.createElement("div")
     totalCarr.className = "carrito-total"
-    totalCarr.innerHTML = `Total a pagar: $${total} `
+    totalCarr.innerHTML = `Total a pagar: $${formatoPrecio(total)} `
     totalTag.innerHTML=''
     totalTag.append(totalCarr)
 
