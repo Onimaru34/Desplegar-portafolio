@@ -2,6 +2,7 @@ let keyboard = document.getElementById('keyboard');
 let game = document.getElementById('game');
 let lineas = document.getElementById('lineas');
 let matacho = document.getElementById('matacho');
+let perdiste = document.getElementById('perdiste');
 
 let key
 let aciertos = 0
@@ -171,9 +172,14 @@ document.querySelectorAll('.key').forEach(button => {
             console.log(aciertos)
 
               if(aciertos==palabraAsignadaArray.length){
-                matach.src = imagenesMatacho[7]
 
-                matach.addEventListener('click', function () {
+                game.style.backgroundImage = "url('./imagenesjuego/win.jpg')";
+                game.style.height = "100vh"
+                matach.src = imagenesMatacho[fallos]
+                perdiste.style.display = 'block';
+
+
+                perdiste.addEventListener('click', function () {
 
                     document.getElementById('game').style.display = 'none';
                     document.getElementById('section1').style.display = 'block';
@@ -190,8 +196,14 @@ document.querySelectorAll('.key').forEach(button => {
 
             if (fallos >= 6) {
                 /* keyboard.innerHTML='' */
-                matach.src = imagenesMatacho[6]
-                matach.addEventListener('click', function () {
+
+                game.style.backgroundImage = "url('./imagenesjuego/perdiste.jpg')";
+                game.style.height = "100vh"
+                matach.src = imagenesMatacho[5]
+                perdiste.style.display = 'block';
+
+            
+                perdiste.addEventListener('click', function () {
 
 
 
@@ -229,9 +241,14 @@ document.querySelectorAll('.key').forEach(button => {
             console.log(aciertos)
 
               if(aciertos==palabraAsignadaArray.length){
-                matach.src = imagenesMatacho[7]
 
-                matach.addEventListener('click', function () {
+                game.style.backgroundImage = "url('./imagenesjuego/win.jpg')";
+                game.style.height = "100vh"
+                perdiste.style.display = 'block';
+
+                matach.src = imagenesMatacho[fallos]
+
+                perdiste.addEventListener('click', function () {
 
                     document.getElementById('game').style.display = 'none';
                     document.getElementById('section1').style.display = 'block';
@@ -248,10 +265,15 @@ document.querySelectorAll('.key').forEach(button => {
 
              if (fallos >= 4) {
                 /* keyboard.innerHTML='' */
-                matach.src = imagenesMatacho[6]
-                matach.addEventListener('click', function () {
+                
 
+                game.style.backgroundImage = "url('./imagenesjuego/perdiste.jpg')";
+                game.style.height = "100vh"
+                perdiste.style.display = 'block';
 
+                matach.src = imagenesMatacho[3]
+
+                perdiste.addEventListener('click', function () {
 
                     document.getElementById('game').style.display = 'none';
                     document.getElementById('section1').style.display = 'block';
@@ -293,9 +315,16 @@ document.querySelectorAll('.key').forEach(button => {
            
 
               if(aciertos==palabraAsignadaArray.length){
-                matach.src = imagenesMatacho[7]
 
-                matach.addEventListener('click', function () {
+                game.style.backgroundImage = "url('./imagenesjuego/win.jpg')";
+                game.style.height = "100vh"
+                perdiste.style.display = 'block';
+
+                matach.src = imagenesMatacho[fallos]
+
+              
+
+                perdiste.addEventListener('click', function () {
 
                     document.getElementById('game').style.display = 'none';
                     document.getElementById('section1').style.display = 'block';
@@ -310,11 +339,17 @@ document.querySelectorAll('.key').forEach(button => {
             fallos = fallos + 1
             matach.src = imagenesMatacho[fallos]
 
-             if (fallos >= 4) {
+             if (fallos >= 3) {
                 /* keyboard.innerHTML='' */
-                matach.src = imagenesMatacho[6]
                 
-                matach.addEventListener('click', function () {
+                
+                game.style.backgroundImage = "url('./imagenesjuego/perdiste.jpg')";
+                game.style.height = "100vh"
+                perdiste.style.display = 'block';
+
+                matach.src = imagenesMatacho[2]
+
+                perdiste.addEventListener('click', function () {
 
 
 

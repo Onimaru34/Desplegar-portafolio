@@ -22,6 +22,14 @@ body {
     z-index: 1;
 }
 
+#Bienvenido{
+    font-size: 50px;
+}
+
+#playButton{
+    font-size: 50px;
+}
+
 #section2 {
     background-image: url('./imagenesjuego/fondo11.jpg');
     background-size: cover;
@@ -37,8 +45,55 @@ body {
 }
 
 #sec2Content{
-    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3%;
+    font-size: 50px;
 }
+
+.categoryButton{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+     margin: 10px;
+     padding: 10px 20px;
+    font-size: 25px;
+     background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 420px;
+    height: 140px;
+}
+
+.categoryButton:hover {
+    background-color: #006080;
+}
+
+
+#sec3Content{
+    padding-top: 3%;
+    font-size: 50px;
+}
+
+.difficultyButton{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 25px;
+     background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 420px;
+    height: 140px;
+}
+
 
 #section3 {
     background-image: url('./imagenesjuego/fondo11.jpg');
@@ -55,7 +110,11 @@ body {
 }
 
 #sec3Content{
-    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3%;
+    font-size: 50px;
 }
 
 #game{
@@ -94,6 +153,15 @@ body {
 
 #matacho{
     padding-top: 10px   ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#perdiste{
+    background-color: orangered;
 }
 
 
@@ -105,12 +173,12 @@ h2{
     color: #0effd5;
 }
 .dificultad {
-        max-width: 50px; /* Ajusta el ancho máximo de la imagen */
-        max-height: 50px; /* Ajusta la altura máxima de la imagen */
+        max-width: 250px; /* Ajusta el ancho máximo de la imagen */
+        max-height: 100px; /* Ajusta la altura máxima de la imagen */
     }
 .dificultad2 {
-        max-width: 90px; /* Ajusta el ancho máximo de la imagen */
-        max-height: 90px; /* Ajusta la altura máxima de la imagen */
+        max-width: 250px; /* Ajusta el ancho máximo de la imagen */
+        max-height: 100px; /* Ajusta la altura máxima de la imagen */
     }
 
 button {
@@ -139,20 +207,7 @@ background-image:cover;
     max-width: 50%; /* Ajusta el ancho máximo de la imagen */
     max-height: 50%; /* Ajusta la altura máxima de la imagen */   
 }
-.categoryButton {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #008CBA;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-.categoryButton:hover {
-    background-color: #006080;
-}
 
 /* Estilos para seccion jugar */
 
